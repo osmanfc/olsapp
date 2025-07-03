@@ -1,16 +1,23 @@
 # OLSApp – Free PHP Script Installer & WordPress Manager (Softaculous Alternative)
 
-**OLSApp** is a free and lightweight PHP-based app installer and WordPress management tool. Built to work on **any PHP server**, it lets you quickly install, manage, and configure popular web apps — including deep integration with WordPress features like **plugin, theme, and user management** — all from a simple interface.
+**OLSApp** is a free and lightweight PHP-based app installer and WordPress management tool. It works on **any PHP hosting server** and supports one-click installation of apps like WordPress, Joomla, Laravel, and more.  
+It also includes advanced tools for **WordPress plugin, theme, and user management**, along with **cloning**, **backup**, and **restore** functionality.
 
 ---
 
 ## 🌟 Key Features
 
-- ✅ One-click app installer for popular PHP scripts
-- 🧩 Full WordPress management (plugins, themes, users)
-- ⚙️ Works with any PHP server (Apache, Nginx, OpenLiteSpeed, etc.)
-- 🧰 No database required for the panel itself
-- 🔐 100% free, open-source, no license needed
+- ✅ One-click installation for popular PHP applications
+- 🧩 Full WordPress management:
+  - Install/Manage Plugins and Themes
+  - Manage WordPress Users
+  - View and control site metadata
+- 🔁 **Clone WordPress installations** to a new domain or subfolder
+- 💾 **Backup** WordPress site files + database in one click
+- ♻️ **Restore** backups anytime from ZIP archive
+- ⚙️ Works with **any PHP server** (Apache, Nginx, OpenLiteSpeed, etc.)
+- 🧰 No panel dependency — can run standalone
+- 🔐 100% free and open-source (MIT Licensed)
 
 ---
 
@@ -26,9 +33,27 @@
 
 ---
 
-## 📦 Supported Applications
+## 🔃 Clone, Backup & Restore Features
 
-*(Apps listed by category)*
+### 🔁 Clone Site
+Easily duplicate any existing WordPress site to a new location. This is useful for:
+- Creating staging or test sites
+- Migrating between domains or directories
+
+### 💾 Backup
+Create a complete ZIP archive of:
+- WordPress files (themes, plugins, uploads)
+- WordPress database (`.sql` file included)
+
+### ♻️ Restore
+Upload and restore any backup archive made by OLSApp:
+- Select the `.zip` backup
+- Automatically extracts and imports files + database
+- Restore WordPress site in seconds
+
+---
+
+## 📦 Supported Applications
 
 **Blogs:** WordPress  
 **CMS:** Joomla, Drupal, Silverstripe, ConcreteCMS  
@@ -39,22 +64,40 @@
 
 ---
 
-## 🧪 Usage Instructions
+## 🧪 How to Use
 
-1. Upload `olsapp` to your PHP hosting server.
-2. Visit: `https://yourdomain.com/olsapp/`
-3. Choose an app to install or manage your WordPress sites.
-4. Done!
+1. Upload OLSApp to your server: `/public_html/olsapp/`
+2. Visit: [https://olsapp.olspanel.com](https://olsapp.olspanel.com)
+3. Use the menu to:
+   - Install a new app
+   - Manage WordPress sites
+   - Clone, backup, or restore a WordPress installation
+
+---
+
+## ⚙️ Requirements
+
+- PHP 7.4 or newer (PHP 8.x compatible)
+- `ZipArchive`, `cURL`, and `PDO` PHP extensions
+- Compatible with Apache, Nginx, OpenLiteSpeed, etc.
+- Internet access for downloading app packages
 
 ---
 
 ## 📜 License
 
-This project is licensed under the MIT License.  
-Free for commercial and personal use.
+MIT License — Free for personal, commercial, and hosting provider use.
 
 ---
 
-## 🌐 Official Website
+## 🌐 Project Links
 
-👉 [https://olsapp.olspanel.com(https://olsapp.olspanel.com)
+🔗 Live Demo: [https://olsapp.olspanel.com](https://olsapp.olspanel.com)  
+📁 GitHub Repo: [https://github.com/osmanfc/olsapp](https://github.com/osmanfc/olsapp)
+
+---
+
+## 🤝 Contribute
+
+Pull requests, issues, and suggestions are welcome.  
+Got a new app to suggest or a bug to report? [Open an issue](https://github.com/osmanfc/olsapp/issues).
