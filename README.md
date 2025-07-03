@@ -6,43 +6,55 @@
 
 ## 🌟 Key Features
 
-- ✅ **One-click app installer** for popular PHP scripts
-- 🧩 **Full WordPress management**:
-  - Install WordPress with one click
-  - Manage WordPress **plugins** (install/activate/deactivate)
-  - Manage **themes** and updates
-  - Add, edit, or remove **WordPress users**
-- ⚙️ Works with **any PHP web server** (Apache, Nginx, OpenLiteSpeed, etc.)
-- 💡 Lightweight, fast, and no database required for the panel itself
-- 🔐 100% free, no license, no subscription
-- 🧰 Easy to integrate with existing hosting panels
+- ✅ One-click app installer for popular PHP scripts
+- 🧩 Full WordPress management (plugins, themes, users)
+- ⚙️ Works with any PHP server (Apache, Nginx, OpenLiteSpeed, etc.)
+- 🧰 No database required for the panel itself
+- 🔐 100% free, open-source, no license needed
+
+---
+
+## 📸 Screenshots
+
+### 🔧 OLSApp Dashboard
+
+![OLSApp Dashboard](https://github.com/osmanfc/olsapp/blob/main/screenshorts/dashboard.png?raw=true)
+
+### 🚀 One-click App Installer Interface
+
+![App Installer](https://github.com/osmanfc/olsapp/blob/main/screenshorts/install.png?raw=true)
 
 ---
 
 ## 📦 Supported Applications
 
-### 📝 Blogs
-- **WordPress**
+*(Apps listed by category)*
 
-### 🖥️ CMS (Content Management Systems)
-- **Joomla**
-- **Drupal**
-- **Silverstripe**
-- **ConcreteCMS**
-
-### 💬 Forums
-- **phpBB**
-
-### 🧰 Frameworks
-- **Laravel**
-- **CodeIgniter**
-
-### 🛒 E-commerce
-- **PrestaShop**
-- **OpenCart**
-
-### 📁 Project Management
-- **Kanboard**
+**Blogs:** WordPress  
+**CMS:** Joomla, Drupal, Silverstripe, ConcreteCMS  
+**Forums:** phpBB  
+**Frameworks:** Laravel, CodeIgniter  
+**E-commerce:** PrestaShop, OpenCart  
+**Project Management:** Kanboard
 
 ---
 
+## 🧪 Usage Instructions
+
+1. Upload `olsapp` to your PHP hosting server.
+2. Visit: `https://yourdomain.com/olsapp/`
+3. Choose an app to install or manage your WordPress sites.
+4. Done!
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.  
+Free for commercial and personal use.
+
+---
+
+## 🌐 Official Website
+
+👉 [https://olsapp.olspanel.com(https://olsapp.olspanel.com)
