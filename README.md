@@ -3,6 +3,9 @@
 **OLSApp** is a free and lightweight PHP-based app installer and WordPress management tool. It works on **any PHP hosting server** and supports one-click installation of apps like WordPress, Joomla, Laravel, and more.  
 It also includes advanced tools for **WordPress plugin, theme, and user management**, along with **cloning**, **backup**, and **restore** functionality.
 
+You can add any php script by make setup.php file by follow rules.
+[https://olsapp.olspanel.com/develop.php](https://olsapp.olspanel.com/develop.php)
+
 ---
 
 ## 🌟 Key Features
