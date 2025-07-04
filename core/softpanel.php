@@ -25,9 +25,6 @@ class softpanel{
 		global $cpanel;
 		
 		//Some Theme Settings
-		$this->theme['softimages'] = 'softimages';// Relative to the accessed URL
-		$this->theme['url'] = 'themes';// Relative to the accessed URL
-		$this->theme['admin_url'] = 'enduser/themes';// Relative to the accessed URL
 		$this->theme['logout'] = '/logout/'; // Relative to the accessed URL
 		$this->theme['panel_url'] = '/'; // Relative to the accessed URL
 		
