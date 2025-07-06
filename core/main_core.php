@@ -2153,6 +2153,81 @@ public function custom_unlink($path) {
     return [false, "Failed to delete. Possible permission issue.\n" . implode("\n", $output)];
 }
 
+public function selfversion() {
+    $localVersion = '1.0.0'; 
+    $remoteUrl = 'https://olsapp.olspanel.com/version.txt';
+    $cacheFile = __DIR__ . '/.version_cache.php';
+    $checkInterval = 86400; // 24 hours
+
+    $lastChecked = 0;
+    $cachedVersion = null;
+
+    // Create cache file if missing with default data
+    if (!file_exists($cacheFile)) {
+        file_put_contents($cacheFile, "<?php return " . var_export([
+            'last_checked' => 0,
+            'version' => null
+        ], true) . ";");
+    }
+
+    // Load existing cache
+    $data = @include $cacheFile;
+    if (is_array($data)) {
+        $lastChecked = $data['last_checked'] ?? 0;
+        $cachedVersion = $data['version'] ?? null;
+    }
+
+    // Use cached version if within 24 hours
+    if (time() - $lastChecked < $checkInterval) {
+        return [
+            'status' => 'cached',
+            'local_version' => $localVersion,
+            'remote_version' => $cachedVersion,
+            'update_available' => version_compare($cachedVersion, $localVersion, '>'),
+            'last_checked' => $lastChecked
+        ];
+    }
+
+    // Fetch remote version using cURL
+    $ch = curl_init($remoteUrl);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Ignore SSL warnings
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+
+    $result = curl_exec($ch);
+
+    if (curl_errno($ch)) {
+        $error = curl_error($ch);
+        curl_close($ch);
+        return [
+            'status' => 'error',
+            'message' => 'cURL error: ' . $error,
+            'local_version' => $localVersion,
+            'remote_version' => $cachedVersion,
+            'update_available' => false
+        ];
+    }
+
+    curl_close($ch);
+    $remoteVersion = trim($result);
+
+    // Save to cache file
+    if ($remoteVersion) {
+        file_put_contents($cacheFile, "<?php return " . var_export([
+            'last_checked' => time(),
+            'version' => $remoteVersion
+        ], true) . ";");
+    }
+
+    return [
+        'status' => 'updated',
+        'local_version' => $localVersion,
+        'remote_version' => $remoteVersion,
+        'update_available' => version_compare($remoteVersion, $localVersion, '>'),
+        'last_checked' => time()
+    ];
+}
 
 
 
