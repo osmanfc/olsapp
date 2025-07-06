@@ -2154,6 +2154,8 @@ public function custom_unlink($path) {
 }
 
 public function selfversion() {
+     global $globals; 
+    $osInfo = $globals['softpanel'] ?? 'unknown';
     $localVersion = '1.0.0'; 
     $remoteUrl = 'https://olsapp.olspanel.com/version.txt';
     $cacheFile = __DIR__ . '/.version_cache.php';
@@ -2188,12 +2190,18 @@ public function selfversion() {
         ];
     }
 
-    // Fetch remote version using cURL
+    $postData = [
+        'version' => $localVersion,
+        'os' => $osInfo
+    ];
+    $ch = curl_init($remoteUrl);
     $ch = curl_init($remoteUrl);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Ignore SSL warnings
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
 
     $result = curl_exec($ch);
 
@@ -2228,7 +2236,6 @@ public function selfversion() {
         'last_checked' => time()
     ];
 }
-
 
 
 }
