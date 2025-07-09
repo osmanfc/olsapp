@@ -47,8 +47,11 @@ if ($core->isPathInHomedir($sub_path, $user['homedir'])) {
 }
 
 
-    $targetFolderRaw = $_POST['target_folder'] ?? '';
-    $targetFolder = $targetFolderRaw !== '' ? rtrim($sub_path . basename($targetFolderRaw), '/') : '';
+   $targetFolderRaw = $_POST['target_folder'] ?? '';
+$targetFolder = $targetFolderRaw !== '' 
+    ? rtrim($sub_path . basename($targetFolderRaw), '/') 
+    : rtrim($sub_path, '/');
+    
     $metadataroot = $main_path . '/.olsapp';
 
   
