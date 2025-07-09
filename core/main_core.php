@@ -663,11 +663,16 @@ $insertId = $pdo->lastInsertId();
 
 
 public function validateTargetFolderName($folderName) {
+    // If empty, skip validation (no error)
+    if (trim($folderName) === '') {
+        return true;
+    }
+
     // Check for any whitespace characters
     if (preg_match('/\s/', $folderName)) {
         return "Error: Folder name cannot contain spaces.";
     }
-    
+
     // Allow only letters, numbers, dashes, and underscores
     if (!preg_match('/^[a-zA-Z0-9_-]+$/', $folderName)) {
         return "Error: Folder name contains invalid characters. Only letters, numbers, dashes, and underscores are allowed.";
@@ -675,6 +680,7 @@ public function validateTargetFolderName($folderName) {
 
     return true; // Valid folder name
 }
+
 
 
 
