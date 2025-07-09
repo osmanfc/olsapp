@@ -1913,7 +1913,11 @@ public function copy_folder_recursive($source, $destination) {
 
         $srcPath = $source . '/' . $file;
         $destPath = $destination . '/' . $file;
-
+		
+if (realpath($srcPath) === realpath($destination)) {
+            continue;
+        }
+		
         if (is_dir($srcPath)) {
             // Recursively copy subfolder contents
             $this->copy_folder_recursive($srcPath, $destPath);
@@ -1930,7 +1934,6 @@ public function copy_folder_recursive($source, $destination) {
 
     return true;
 }
-
 
 
 public function set_ownership_with_self($folder, $user, $group = null) {
