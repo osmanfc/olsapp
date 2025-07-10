@@ -65,7 +65,8 @@
  
                         <li class="nav-item dropdown nav-user">
                           <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <small style="font-size: 14px;margin-right:10px;"><?php echo htmlspecialchars($user['displayname'], ENT_QUOTES, 'UTF-8'); ?></small>
+  <small style="font-size: 14px;margin-right:10px;"><?php echo htmlspecialchars(!empty($user['displayname']) ? $user['displayname'] : $user['name'], ENT_QUOTES, 'UTF-8'); ?>
+</small>
 </a>
     <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
