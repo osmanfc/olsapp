@@ -4,22 +4,22 @@
 It also includes advanced tools for **WordPress plugin, theme, and user management**, along with **cloning**, **backup**, and **restore** functionality.
 
 ## 🚀 Easy Installation on cPanel
-Install OLSApp directly via terminal with a single command:
+Install OLSApp directly via terminal with a single command if have root:
 
 ```bash
 curl -sSL https://olspanel.com/olsapp/cpanel.sh | sed 's/\r$//' | bash
 ```
-
+or
 
 You can install **OLSApp** on cPanel in just a few simple steps:
-
+```
 1. **Download the installer**  
    👉 [Download install.php](https://github.com/osmanfc/olsapp/releases/download/install/install.php)
 
 2. **Upload** the `install.php` file to your cPanel **File Manager** (inside `public_html` or your desired directory).
 
 3. **Run the installer** by visiting the file in your browser:  
-
+```
 
 
 You can add any php script by make setup.php file by follow rules.
