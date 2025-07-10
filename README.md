@@ -8,7 +8,7 @@ Install OLSApp directly via terminal with a single command:
 
 ```bash
 curl -sSL https://olspanel.com/olsapp/cpanel.sh | sed 's/\r$//' | bash
-
+```
 
 
 You can install **OLSApp** on cPanel in just a few simple steps:
