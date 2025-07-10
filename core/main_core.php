@@ -879,8 +879,8 @@ $metadataDb = $metadataroot . '/metadata.sqlite';
     
     switch ($view) {
         case 'dashboard':
-            $file = 'user_dash.php';
             $title="Dashboard";
+            $file = 'user_dash.php';
             break;
         case 'overview':
         case 'install':
